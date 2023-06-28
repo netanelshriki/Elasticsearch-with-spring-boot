@@ -145,4 +145,66 @@ we should see the Kibana page like that:
 ![This is an image](https://github.com/netanelshriki/Elasticsearch-with-spring-boot/blob/master/src/main/resources/assets/landing-page-kibana.png)
 
 
+expand the navbar on the right side, and we should be able to see dev tools, click it,
+and we should see a json file as we saw earlier, there we can write complex queries.
+
+lets we write a query that count us the number of persons with the exact name "John" 
+(name.keyword - means the exact word):
+```json lines
+GET /persons-index/_count
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": {
+            "name.keyword": "John"
+          }
+        },
+        {
+          "range": {
+            "age": {
+              "gt": 20
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+notice to the url we send our request - _count instead of _search (that retrieve the whole data).
+
+
+
+this is, an example to a query that return only the person that their name contains the char "a"
+and in addition their age is greater than 20:
+
+```json lines
+GET /persons-index/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "wildcard": {
+            "name": "*a*"
+          }
+        },
+        {
+          "range": {
+            "age": {
+              "gt": 20
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+
+
 
