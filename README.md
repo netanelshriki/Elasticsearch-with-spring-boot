@@ -86,10 +86,58 @@ And that's it!
 
 now we just run our application, and we should be able to see John details :smiley:
 
+
+## step 3 - custom @Query 
+lets we write more complex queries (which in fact is the reason elasticsearch developed for)
+
+this is the way we write a queries in Kibana 
+devtools (we'll elaborate on this later) - it's called query DSL, and is json based query
+```json lines
+GET /persons-index/_search
+{
+  "query": {
+    "range": {
+      "age": {
+        "gt": 30
+      }
+    }
+  }
+}
+```
+in this query we access to our index we created (and defined in Person model)
+and we ask to retrieve us only persons that their age is greater than 30 (gt)
+
+in ElasticsearchRepository, it will be written a bit different.
+spring already know the path and http verb we want to use and because it's @Query, we can remove the "query":{} from the json
+(since it's obvious..), so we leave with this json:
+
+```json lines
+  "range": {
+      "age": {
+        "gt": 30
+      }
+    }
+```
+
+now we write it in one line and add it to the @Query on our custom query
+
+```java
+@Repository
+public interface PersonRepository extends ElasticsearchRepository<Person,Long> {
+    @Query(value = "{\"range\":{\"age\":{\"gt\":30}}}")
+    List<Person> findAllOlderThan30();
+}
+
+```
+and you can run it and to see how it works :wink:
+
 ## step 3 - kibana
 first we have to run a kibana image
 ```shell
 docker run --name kibana --net elastic -p 5601:5601 docker.elastic.co/kibana/kibana:7.6.2
 ```
+
+kibana is data visualization and exploration tool, so lets we add some more Persons 
+in order to run more complex queries, and we save them as we did in section 2.
 
 
