@@ -85,3 +85,11 @@ public class InitData implements CommandLineRunner {
 And that's it!
 
 now we just run our application, and we should be able to see John details :smiley:
+
+## step 3 - kibana
+first we have to run a kibana image
+```shell
+docker run --name kibana --net elastic -p 5601:5601 docker.elastic.co/kibana/kibana:7.6.2
+```
+
+
