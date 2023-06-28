@@ -179,7 +179,7 @@ and look at the results, only one person matched our query:
 ![This is an image](https://github.com/netanelshriki/Elasticsearch-with-spring-boot/blob/master/src/main/resources/assets/count-query-kibana.png)
 
 
-this is, an example to a query that return only the person that their name contains the char "a"
+this is, an example to a query that return only the people that their name contains the char "a"
 and in addition their age is greater than 20:
 
 ```json lines
@@ -205,6 +205,9 @@ GET /persons-index/_search
   }
 }
 ```
+
+and result return us the whole data on for people who match our query:
+![This is an image](https://github.com/netanelshriki/Elasticsearch-with-spring-boot/blob/master/src/main/resources/assets/search-query-kibana.png)
 
 
 
