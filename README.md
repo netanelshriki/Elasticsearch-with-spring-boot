@@ -141,6 +141,8 @@ docker run --name kibana --net elastic -p 5601:5601 docker.elastic.co/kibana/kib
 
 kibana is data visualization and exploration tool, so now if we navigate to http://localhost5601 
 we should see the Kibana page like that:
-S
+
+![This is an image](https://github.com/netanelshriki/Elasticsearch-with-spring-boot/blob/master/src/main/resources/assets/landing-page-kibana.png)
+
 
 
