@@ -206,7 +206,7 @@ GET /persons-index/_search
 }
 ```
 
-and result return us the whole data on for people who match our query:
+and result return us the whole data on for people who match our query (I won't show the whole result, it's too long :wink:):
 ![This is an image](https://github.com/netanelshriki/Elasticsearch-with-spring-boot/blob/master/src/main/resources/assets/search-query-kibana.png)
 
 congratulations! :muscle:
