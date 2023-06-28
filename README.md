@@ -89,9 +89,11 @@ now we just run our application, and we should be able to see John details :smil
 
 ## step 3 - custom @Query 
 lets we write more complex queries (which in fact is the reason elasticsearch developed for)
+so lets we add some more Persons
+in order to run more complex queries, and we save them as we did in section 2.
 
 this is the way we write a queries in Kibana 
-devtools (we'll elaborate on this later) - it's called query DSL, and is json based query
+devtools (we'll elaborate on this later) - it's called query DSL, and is json based query:
 ```json lines
 GET /persons-index/_search
 {
@@ -137,7 +139,6 @@ first we have to run a kibana image
 docker run --name kibana --net elastic -p 5601:5601 docker.elastic.co/kibana/kibana:7.6.2
 ```
 
-kibana is data visualization and exploration tool, so lets we add some more Persons 
-in order to run more complex queries, and we save them as we did in section 2.
+kibana is data visualization and exploration tool, 
 
 
