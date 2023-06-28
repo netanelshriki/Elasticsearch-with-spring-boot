@@ -176,6 +176,7 @@ GET /persons-index/_count
 
 notice to the url we send our request - _count instead of _search (that retrieve the whole data).
 and look at the results, only one person matched our query:
+
 ![This is an image](https://github.com/netanelshriki/Elasticsearch-with-spring-boot/blob/master/src/main/resources/assets/count-query-kibana.png)
 
 
@@ -207,6 +208,7 @@ GET /persons-index/_search
 ```
 
 and result return us the whole data on for people who match our query (I won't show the whole result, it's too long :wink:):
+
 ![This is an image](https://github.com/netanelshriki/Elasticsearch-with-spring-boot/blob/master/src/main/resources/assets/search-query-kibana.png)
 
 congratulations! :muscle:
