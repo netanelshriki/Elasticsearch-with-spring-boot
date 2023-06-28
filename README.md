@@ -139,6 +139,8 @@ first we have to run a kibana image
 docker run --name kibana --net elastic -p 5601:5601 docker.elastic.co/kibana/kibana:7.6.2
 ```
 
-kibana is data visualization and exploration tool, 
+kibana is data visualization and exploration tool, so now if we navigate to http://localhost5601 
+we should see the Kibana page like that:
+S
 
 
